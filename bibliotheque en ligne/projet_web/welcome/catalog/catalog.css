@@ -1,0 +1,357 @@
+body {
+    background: url("f.jpg");
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+/*Nav Bar*/
+
+nav {
+    height: 15vh;
+    background: teal;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.d2 {
+    display: flex;
+    list-style: none;
+    width: 50%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+}
+
+.d2 li a {
+    color: white;
+    text-align: none;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.line {
+    width: 40px;
+    height: 4px;
+    background: white;
+    margin: 5px;
+}
+
+.d1 {
+    position: absolute;
+    cursor: pointer;
+    right: 1%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+}
+
+.d2 {
+    position: fixed;
+    background: teal;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(100px at 90% -20%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+}
+
+.d2.open {
+    clip-path: circle(1000px at 90% -20%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+}
+
+.d2 li a:hover {
+    color: crimson;
+}
+
+.d2 li:hover {
+    transform: scale(1.7);
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px) {
+    .d2 {
+        position: fixed;
+        background: teal;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(100px at 90% -20%);
+        -webkit-clip-path: circle(100px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .d2.open {
+        clip-path: circle(1000px at 90% -20%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+}
+
+#logo {
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+#logo img {
+    width: 100px;
+    height: 100px;
+}
+
+#logo:hover {
+    transform: scale(1.5);
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+
+/*************************************/
+
+#f {
+    padding-top: 6%;
+}
+
+#i1 {
+    left: 17%;
+    border-radius: 25px;
+    position: relative;
+    line-height: 40px;
+    padding: 0 22px;
+    font-size: 26px;
+    margin: 2%;
+    background: rosybrown;
+}
+
+#i1:hover {
+    background-color: black;
+    color: snow;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    transform: scale(1.2);
+}
+
+#i2 {
+    left: 550px;
+    border-radius: 50%;
+    position: relative;
+    line-height: 100px;
+    padding: 0 22px;
+    font-size: 26px;
+    margin: 2%;
+    background-color: gray;
+    border: none;
+    font-size: 1.2em;
+}
+
+#i2:hover {
+    background-color: darkorange;
+    color: snow;
+    cursor: pointer;
+    transform: scale(1.09);
+    transition: 0.4s ease-in-out;
+}
+
+#f select {
+    left: 0px;
+    border-radius: 25px;
+    position: relative;
+    line-height: 40px;
+    padding: 0 22px;
+    font-size: 40px;
+    margin: 3%;
+    background: rosybrown;
+}
+
+#f select:hover {
+    background-color: black;
+    color: snow;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    transform: scale(1.2);
+}
+
+
+/*************************************/
+
+#p1 h2,
+p {
+    display: inline;
+}
+
+table tr th {
+    width: 30%;
+}
+
+#d1 img {
+    border-radius: 15px;
+    box-shadow: 5px 4px 5px 4px rgba(0, 0, 0, 0.83);
+    height: 300px;
+    width: 300px;
+}
+
+#d1 img:hover {
+    opacity: 2;
+    transform: scale(1.05);
+    transition: 0.6s ease-in-out;
+}
+
+#f1 input {
+    border-radius: 50%;
+    position: relative;
+    line-height: 50px;
+    padding: 0 22px;
+    font-size: 30px;
+    background-color: green;
+    border: none;
+    font-size: 1.3em;
+}
+
+#d1 input:hover {
+    background-color: darkorange;
+    color: snow;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    transform: scale(1.2);
+}
+
+#h {
+    position: relative;
+    font-size: 14vh;
+    color: snow;
+    -webkit-text-stroke: 0.3vh darkslategray;
+    text-transform: uppercase;
+}
+
+#h::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: darkslategray;
+    -webkit-text-stroke: 0.3vh snow;
+    border-right: 2px solid darkslategray;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+    0%,
+    10%,
+    100% {
+        width: 0%;
+    }
+    70%,
+    90% {
+        width: 100%;
+    }
+}
+
+
+/*footer*/
+
+footer {
+    background-color: goldenrod;
+    color: snow;
+    padding: 20px 0 10px 0;
+    text-align: center;
+    height: 600px;
+}
+
+#f2 {
+    margin: 0 auto;
+    max-width: 900px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#f2 input,
+textarea,
+button {
+    border: none;
+    width: 55%;
+    padding: 15px 10px;
+    margin: 1px 0;
+    font-size: 1.2em;
+    border-radius: 8px;
+}
+
+#f2 textarea {
+    height: 120px;
+}
+
+#f2 button {
+    font-size: 1.5em;
+    background-color: lightgoldenrodyellow;
+}
+
+#f2 button:hover {
+    background-color: darkorange;
+    color: snow;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    transform: scale(1.2);
+}
+
+#t2 {
+    height: 1px;
+    width: 75%;
+    background-color: snow;
+    margin: 60px auto;
+}
+
+#icon {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 0 10%;
+}
+
+#co {
+    width: 50%;
+    text-align: left;
+    color: snow;
+}
+
+#icons {
+    width: 50%;
+    float: right;
+}
+
+#icons a {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 1.2em;
+    color: snow;
+    text-align: center;
+}
+
+#icons a:hover {
+    transform: scale(1.5);
+    transition: 0.4s ease-in-out;
+    color: steelblue;
+}
+
+#f2 input:hover {
+    background-color: black;
+    color: snow;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    transform: scale(1.2);
+}
+
+html {
+    scroll-behavior: smooth;
+}

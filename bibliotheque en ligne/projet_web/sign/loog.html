@@ -1,0 +1,154 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>LogIn</title>
+    <link href="aboutus.html">
+    <link href="sign_up.html">
+    <link rel="shortcut icon" type="image/png" href=" images/logo1.png">
+    <script type="text/javascript">
+        function aff(){
+           window.alert("Done");
+          }
+    </script>
+</head>
+<style>
+    form {
+        margin: auto;
+        width: 70%;
+        padding: 1px 20px 5px 10px;
+        background-color: rgb(236, 237, 245);
+        margin-top: 10px;
+    }
+    
+    h1 {
+        text-align: center;
+        color: rgba(160, 8, 102, 0.671);
+        font-family: 'cac_champagneregular', Arial, serif;
+        text-decoration: underline;
+        font-size: 50px;
+        padding: 10px;
+    }
+    
+    label {
+        font-size: 25px;
+        color: rgb(11, 137, 146);
+    }
+    
+    input {
+        width: 50%;
+        padding: 12px 40px;
+        margin: 20px 40px;
+        box-sizing: border-box;
+        border: 2px solid rgb(118, 124, 146);
+        border-radius: 4px;
+        background-color: #edf2f8;
+        color: rgb(94, 7, 7);
+    }
+    
+    #es {
+        margin-left: 222px;
+        width: 50%;
+    }
+    
+    input:focus {
+        background-color: cornsilk;
+        border: 3px rosybrown;
+    }
+    
+    button {
+        background-color: #b89010;
+        border: seagreen;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        cursor: pointer;
+        width: 25%;
+        display: block;
+        position: relative;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: large;
+    }
+    
+    a {
+        display: block;
+        margin: 25px auto;
+        width: 115px;
+        text-align: center;
+        color: rgb(8, 68, 38);
+    }
+    
+    .navbar {
+        width: 85%;
+        margin: auto;
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        background-color: rgb(255, 253, 240);
+    }
+    
+    .logo {
+        width: 120px;
+        cursor: pointer;
+        height: 100px;
+    }
+    
+    .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+    }
+    
+    .navbar ul li a {
+        text-decoration: none;
+        color: rgb(179, 44, 44);
+        text-transform: uppercase;
+        font-size: large;
+    }
+    
+    .navbar ul li::after {
+        content: '';
+        height: 3px;
+        width: 0%;
+        background: #e4471f;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5;
+    }
+    
+    .navbar ul li:hover::after {
+        width: 100%;
+    }
+</style>
+
+<body onload="aff()">
+    <div class="navbar">
+        <img src="logo.png" class="logo" height=50 width=400>
+        <ul>
+<li><a href="https://127.0.0.1/projet_web/welcome/welcome.html">Home</a></li>
+            <li><a href="https://127.0.0.1/projet_web/aboutus/aboutus.html">About Us</a></li>
+            <li><a href="https:/127.0.0.1/projet_web/welcome/welcome.html#contact" a>Contact Us</a></li>
+            
+            <li><a href="https://127.0.0.1/projet_web/sign/sign.html">Sign Up</a></li>
+        </ul>
+    </div>
+    <form method='post' action='https://127.0.0.1/projet_web/log/log.php'>
+        <h1>LOG IN :</h1>
+        <label>Mail Adress/Phone Number : </label>
+        <input type="text" placeholder="Enter your mail adress or your phone number please." required name="user">
+        <br>
+        <label>   Password : </label>
+        <input type="password" placeholder="Enter your password please." id="es" required name="pwd">
+        <br>
+        <button type="submit">Connection</button>
+        <a href="forget" style="width:200px">I forget my Password</a>
+    </form>
+</body>
+
+</html>

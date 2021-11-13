@@ -1,0 +1,148 @@
+<!Doctype html>
+<html>
+
+<head>
+    <meta charset="utf_8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="aboutus.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="login.html">
+    <link href="sign_up.html">
+    <link rel="shortcut icon" type="image/png" href=" images/logo1.png">
+</head>
+
+<body>
+
+    <div class="banner">
+        <div class="navbar">
+            <img src="images/logo1.png" class="logo" height=50 width=400>
+            <ul>
+                <li><a href="#" a>About Us</a></li>
+                <li><a href="welcome.html#contact" a>Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="sign_up.html">Sign Up</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="box" class="box1">
+                <div class="imgBX">
+                    <img src="images/whoarewe.png">
+
+                </div>
+                <div class="content">
+                    <h3>Who are we?</h3>
+                    <p>Three computer science students studying at the higher institute of computer science also known as ISI Ariana.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="box" class="box2">
+                <div class="imgBX">
+                    <img src="images/contact.jpg">
+
+                </div>
+                <div class="content">
+                    <h3>Contact us:</h3>
+                    <p>Mail: MRM@gmail.com</p>
+                    <p>Number: 36542177</p>
+                    <p>Twitter: @mrmISI</p>
+                </div>
+
+            </div>
+
+            <div class="box" class="box3">
+                <div class="imgBX">
+                    <img src="images/where.png" class="img4">
+
+                </div>
+                <div class="content">
+                    <h3>Where are we?</h3>
+                    <p>
+                        Currently in Ariana.
+                    </p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+    <br><br>
+    <div class="boxx" class="box4">
+        <div class="imgBX" style="margin-left:10px">
+            <img src="images/services.jpg">
+
+        </div>
+        <div class="contentt" style="float:right;">
+            <h3>Our services:</h3>
+
+            <ul>
+                <li>Consult catalog</li>
+                <li>search for a book</li>
+                <li>Borrow a book</li>
+            </ul>
+        </div>
+
+    </div>
+    <br><br>
+
+    <aside>
+        <h3>Our visitors:</h3>
+        <div id="piechart1">
+            <div id="piechart" class="chart"></div>
+
+
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+            <script type="text/javascript">
+                google.charts.load('current', {
+                    'packages': ['corechart']
+                });
+                google.charts.setOnLoadCallback(drawChart);
+
+
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ['Task', 'number of visitors'],
+                        ['licence students', 8],
+                        ['masters student', 2],
+                        ['engineering students', 4],
+                        ['professors', 2],
+                    ]);
+
+                    // Optional; add a title and set the width and height of the chart
+                    var options = {
+                        'width': 300,
+                        'height': 200
+                    };
+
+                    // Display the chart inside the <div> element with id="piechart"
+                    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                    chart.draw(data, options);
+                }
+            </script>
+        </div>
+
+        <div class="feedback">
+            <h2>our users rating:</h2>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span></div>
+
+    </aside>
+
+    <footer class="clearfix">
+        <h3>@Copyright 2021</h3>
+
+    </footer>
+</body>
+
+</html>

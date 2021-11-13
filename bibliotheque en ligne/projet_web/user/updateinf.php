@@ -1,0 +1,206 @@
+
+<?php
+SESSION_START();
+require_once 'connexiondb.php';
+if(count($_POST)>0) {
+mysqli_query($conn,"UPDATE user set cin_u='" . $_POST['cin_u'] . "', name_u='" . $_POST['name_u'] . "', password_u='" . $_POST['password_u'] . "', status='" . $_POST['status'] . "' ,mail_u='" . $_POST['mail_u'] . "',phone_u='".$_POST['phone_u']."'  WHERE cin_u='" . $_POST['cin_u'] . "'");
+$message = "Record Modified Successfully";
+
+}
+$result = mysqli_query($conn,"SELECT * FROM user WHERE cin_u='" . $_GET['cin'] . "'");
+$row= mysqli_fetch_array($result);
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="user.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+  <style>
+form {
+        margin: auto;
+        width: 36%;
+        padding: 0px 20px 5px 10px;
+        background-color: rgb(236, 237, 245);
+        margin-top: 10px;
+        display:block;
+    }
+
+    
+    
+    label {
+        font-size: 25px;
+        color: rgb(11, 137, 146);
+    }
+    
+    
+    
+   
+    
+    input:focus {
+        background-color: cornsilk;
+        border: 3px rosybrown;
+    }
+    
+    .buttom {
+        background-color: orange;
+        border: seagreen;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        cursor: pointer;
+        width: 70%;
+        float:left;
+        font-size: large;
+    }
+    .buttom:hover {
+        background-color: cyan;
+        transform:scale(1.02);
+        color:black;
+        transition: 0.4s ease-in-out;
+
+    }
+    #b1{
+    color:indianRed;
+    font-size:40px;
+    -webkit-text-stroke: 0.3vh darkslategray;
+    text-transform: uppercase;
+}
+
+body{
+    background:linear-gradient(-45deg,firebrick,rosybrown,TEAL,chocolate);
+    background-size:400% 400%;
+    animation:gradient 15s ease infinite;
+}
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+form p{
+    padding-left:50px
+}
+form input {
+    left: 100px;
+    border-radius: 6px;
+    position: relative;
+    line-height: 40px;
+    padding: 0 22px;
+    font-size: 16px;
+    margin: 2%;
+}
+form p{
+    color:black;
+}
+    
+
+</style>
+
+  </head>
+  <body>
+
+  <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+			<h3>Welcome  <h3 id='b1'><?php 
+				echo $_SESSION['user']['name_u'].'!';
+                
+				?><h3> </h3>
+				
+                
+            </div>
+
+            <ul class="list-unstyled components">
+            
+                
+                
+                
+                
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Actions</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                       
+                      
+                        <li>
+                            <a href="user.php">Account Information</a>
+                        </li>
+                        <br>
+                        
+                        
+                       
+                       
+                        <li>
+                            <a href="emp.php">Empreints</a>
+                        </li>
+                        <br>
+                       
+                        <li>
+                            <a href="book.php">Books</a>
+                        </li>
+                    </ul>
+                </li>
+				<li>
+					<a href="logout.php">Logout</a>
+				</li>
+                
+                
+            </ul>
+
+            
+        </nav>
+       
+    
+
+
+
+
+
+<form name="frmUser" method="post" action="">
+    <div><?php if(isset($message)) { echo $message; } ?>
+    </div>
+    <div style="padding-bottom:5px;">
+    
+    </div>
+    <p >Cin:</p>
+    <input type="hidden" name="cin_u" class="txtField" value="<?php echo $row['cin_u']; ?>">
+    <input type="text" name="cin_u"  value="<?php echo $row['cin_u']; ?>">
+    <p>Name: </p>
+    <input type="text" name="name_u" class="txtField" value="<?php echo $row['name_u']; ?>">
+    <p>Password :</p>
+    <input type="text" name="password_u" class="txtField" value="<?php echo $row['password_u']; ?>">
+    <p>Mail:</p>
+    <input type="text" name="mail_u" class="txtField" value="<?php echo $row['mail_u']; ?>">
+   <p> Status: </p>
+    <input type="text" name="status" class="txtField" value="<?php echo $row['status']; ?>">
+    <p> Phone: </p>
+    <input type="text" name="phone_u" class="txtField" value="<?php echo $row['phone_u']; ?>">
+    <input type="submit" name="submit" value="Submit" class="buttom">
+</form>
+
+
+     <!-- jQuery CDN - Slim version (=without AJAX) -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+
+  </body>
+</html>
